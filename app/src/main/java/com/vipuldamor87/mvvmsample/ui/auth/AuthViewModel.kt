@@ -3,6 +3,8 @@ package com.vipuldamor87.mvvmsample.ui.auth
 import android.view.View
 import androidx.lifecycle.ViewModel
 import com.vipuldamor87.mvvmsample.data.repositories.UserRepository
+import com.vipuldamor87.mvvmsample.util.Coroutines
+import java.lang.Exception
 
 class AuthViewModel : ViewModel() {
 
@@ -17,8 +19,21 @@ class AuthViewModel : ViewModel() {
             return
         }
 
-        val loginResponse = UserRepository().userLogin(email!!,password!!)
-        authListener?.onSucces(loginResponse)
+        Coroutines.main{
+            try {
+                val authResponse = UserRepository().userLogin(email!!, password!!)
+                authResponse.user?.let {
+                    authListener?.onSucces(it)
+                    return@main
+                }
+                authListener?.onFailure(authResponse.message!!)
+            }catch (e: Exception){
+                authListener?.onFailure(e.message!!)
+            }
+
+
+        }
+
         //success
 
     }
