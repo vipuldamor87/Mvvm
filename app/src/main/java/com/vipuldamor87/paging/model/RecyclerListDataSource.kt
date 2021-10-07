@@ -13,7 +13,7 @@ import retrofit2.Response
 class RecyclerListDataSource: PageKeyedDataSource<Int,RecyclerData>() {
     override fun loadAfter(params: LoadParams<Int>, callback: LoadCallback<Int, RecyclerData>) {
         val retroInstance= RetroInstance.getRetroInstance().create(RetroService::class.java)
-        val call = retroInstance.getDataFromApi(params.key)
+        val call = retroInstance.getDataFromApi(params.key,10)
         call.enqueue(object:Callback<RecyclerList>{
             override fun onResponse(call: Call<RecyclerList>, response: Response<RecyclerList>) {
 
@@ -37,7 +37,7 @@ class RecyclerListDataSource: PageKeyedDataSource<Int,RecyclerData>() {
         callback: LoadInitialCallback<Int, RecyclerData>
     ) {
            val retroInstance= RetroInstance.getRetroInstance().create(RetroService::class.java)
-            val call = retroInstance.getDataFromApi(1)
+            val call = retroInstance.getDataFromApi(1,10)
         call.enqueue(object:Callback<RecyclerList>{
             override fun onResponse(call: Call<RecyclerList>, response: Response<RecyclerList>) {
 
@@ -46,7 +46,7 @@ class RecyclerListDataSource: PageKeyedDataSource<Int,RecyclerData>() {
             }
 
             override fun onFailure(call: Call<RecyclerList>, t: Throwable) {
-                TODO("Not yet implemented")
+                Log.d("MYtag","notworking")
             }
 
         })

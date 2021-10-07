@@ -5,7 +5,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 class RetroInstance {
     companion object{
-        val BASE_URL = "https://reqres.in/api/"
+        val BASE_URL = "https://api.instantwebtools.net/v1/"
 
         fun getRetroInstance() : Retrofit {
 

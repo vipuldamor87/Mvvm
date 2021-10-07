@@ -7,6 +7,7 @@ import retrofit2.http.GET
 import retrofit2.http.Query
 
 interface RetroService {
-    @GET("users")
-    fun getDataFromApi(@Query("page")page : Int) : Call<RecyclerList>
+    @GET("passenger")
+    fun getDataFromApi(@Query("page")page : Int,
+                        @Query("size")size : Int) : Call<RecyclerList>
 }

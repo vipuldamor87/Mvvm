@@ -1,7 +1,6 @@
 package com.vipuldamor87.paging
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.databinding.BindingAdapter
@@ -33,17 +32,6 @@ class RecyclerViewAdapter :PagedListAdapter<RecyclerData, RecyclerViewAdapter.My
         return MyViewHolder(binding)
     }
 
-    companion object{
-        @BindingAdapter("loadImage")
-        @JvmStatic
-        fun loadImage(imageView: ImageView, avatar :String){
-            Glide.with(imageView)
-                .load(avatar)
-                .circleCrop()
-                .placeholder(R.drawable.ic_launcher_background)
-                .error(R.drawable.ic_launcher_background)
-                .fallback(R.drawable.ic_launcher_background)
-                .into(imageView)
-        }
-    }
+
+
 }

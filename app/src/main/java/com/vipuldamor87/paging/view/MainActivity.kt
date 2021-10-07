@@ -1,4 +1,4 @@
-package com.vipuldamor87.paging
+package com.vipuldamor87.paging.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -9,6 +9,8 @@ import androidx.paging.PagedList
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.vipuldamor87.paging.R
+import com.vipuldamor87.paging.RecyclerViewAdapter
 import com.vipuldamor87.paging.data.RecyclerData
 import com.vipuldamor87.paging.viewmodel.MainActivityViewModel
 

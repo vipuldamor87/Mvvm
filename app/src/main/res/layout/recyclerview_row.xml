@@ -13,13 +13,7 @@
     android:layout_height="match_parent">
 
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_gravity="center"
-        android:layout_margin="10dp"
-        app:loadImage='@{recyclerData.avatar}'/>
+
 
     <LinearLayout android:layout_height="wrap_content"
         android:layout_width="wrap_content"
@@ -30,20 +24,20 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
-            android:text="@{recyclerData.first_name}"/>
+            android:text="@{recyclerData.name}"/>
         <TextView
             android:id="@+id/lastName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
-            android:text="@{recyclerData.last_name}"/>
+            android:text="@{recyclerData.trips}"/>
     </LinearLayout>
         <TextView
             android:id="@+id/email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
-            android:text="@{recyclerData.email}"/>
+            android:text="@{recyclerData.name}"/>
 
 </LinearLayout>
 </layout>
